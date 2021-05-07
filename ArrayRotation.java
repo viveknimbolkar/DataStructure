@@ -9,7 +9,7 @@ public class ArrayRotation {
 		
 		for(int i = 0; i < place; i++) {
 			
-			leftRotateByOne(arr, size);
+			leftRotateByOne(arr, size); //call a method to rotate one by one
 		}
 	}
 	
@@ -25,7 +25,7 @@ public class ArrayRotation {
 			arr[i] = arr[i+1]; //shifting the position to left by one index
 		}
 		
-		arr[size - 1] = temp;
+		arr[size - 1] = temp; 
 		
 	}
 	
@@ -33,6 +33,7 @@ public class ArrayRotation {
 	void printArray(int arr[], int size) {
 		
 		for(int i = 0; i < size; i++)
+			
 			System.out.println(arr[i]);
 	}
 
