@@ -125,8 +125,8 @@ public class LinkedList{
 		Node three = new Node(30);
 		Node four = new Node(40);
 
-		list.head.next = two;//assign the address of next node to two
-		
+		list.head.next = two;//assign the address of next
+
 		two.next = three;
 		three.next = four;
 
