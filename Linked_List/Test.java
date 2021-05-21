@@ -23,17 +23,15 @@ public class Test {
         }
     }
 
-    public void addAtStart(int new_data){
+    public void delete(int key){
 
-        Node new_node = new Node(new_data);
+        Node temp=head, prev=null;
 
-        new_node.next = head.next;
-
-        head = new_node;
-    }
-
-    public void addAtGivenNode(Node previous_node, int new_data){
-
+        if (temp != null && key == temp.data){
+            head = temp.next;
+            return;
+        }
+        prev.next = temp.next;
     }
 
     public static void main(String[] args) {
@@ -41,17 +39,15 @@ public class Test {
 
         list.head = new Node(10);
         Node two = new Node(20);
-        Node three = new Node(30);
-        Node four = new Node(40);
 
         list.head.next = two;
-        two.next = three;
-        three.next = four;
 
-        list.addAtStart(67);
+
+
+
         list.printArray();
-        list.addAtStart(56);
-        list.printArray();
+        list.delete(10);
+
 
     }
 }

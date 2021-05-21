@@ -136,8 +136,8 @@ public class LinkedList{
 		//adding new node at the starting
 //		list.addAtBeginning(77);  //adding at the beginning
 //		list.addAtGivenNode(three, 88); //adding after the giving node
-		list.addAtEnd(56);
-		list.printList();
+//		list.addAtEnd(56);
+//		list.printList();
 
 	}
 
