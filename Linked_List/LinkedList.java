@@ -115,6 +115,31 @@ public class LinkedList{
 		return;
 	}
 
+	//delete a node from any node
+	public void deleteNode(int value){
+
+		Node temp = head, prev = null;
+
+		//if the give value is found at the head
+		if (temp != null && temp.data == value){
+			head = temp.next;
+			return;
+		}
+
+		//traverse through the list to delete a given value
+		while (temp != null && temp.data != value){
+			prev = temp;
+			temp = temp.next;
+		}
+
+		//if the given node has null value then return
+		if (temp == null)
+			return;
+
+		//unlink the previous link from the main node
+		prev.next = temp.next;
+	}
+
 	public static void main(String[] args) {
 
 		LinkedList list = new LinkedList();
@@ -130,15 +155,15 @@ public class LinkedList{
 		two.next = three;
 		three.next = four;
 
-		//print the linked list
-		list.printList();
-
 		//adding new node at the starting
 //		list.addAtBeginning(77);  //adding at the beginning
 //		list.addAtGivenNode(three, 88); //adding after the giving node
 //		list.addAtEnd(56);
-//		list.printList();
-
+		System.out.println("Before Delete ");
+		list.printList();
+		list.deleteNode(20);
+		System.out.println("After Delete ");
+		list.printList();
 	}
 
 }
