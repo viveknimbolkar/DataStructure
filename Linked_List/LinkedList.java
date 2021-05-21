@@ -140,6 +140,7 @@ public class LinkedList{
 		prev.next = temp.next;
 	}
 
+
 	public static void main(String[] args) {
 
 		LinkedList list = new LinkedList();
@@ -161,7 +162,7 @@ public class LinkedList{
 //		list.addAtEnd(56);
 		System.out.println("Before Delete ");
 		list.printList();
-		list.deleteNode(20);
+//		list.deleteNodeAtPosition(0);
 		System.out.println("After Delete ");
 		list.printList();
 	}
