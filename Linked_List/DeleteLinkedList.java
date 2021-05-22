@@ -51,8 +51,13 @@ public class DeleteLinkedList {
 
         Node temp2 = temp.next.next;
         temp.next = temp2;
-
     }
+
+    //delete a complete linked list
+    public void deleteLinkedList(){
+        head = null;
+    }
+
 
     public static void main(String[] args) {
 
@@ -76,8 +81,7 @@ public class DeleteLinkedList {
         six.next = seven;
 
         del.printList();
-        del.deleteByPosition(2);
-        del.printList();
+
 
     }
 }
