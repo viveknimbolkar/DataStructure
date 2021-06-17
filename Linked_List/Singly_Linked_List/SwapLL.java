@@ -1,4 +1,4 @@
-package Linked_List;
+package Linked_List.Singly_Linked_List;
 
 public class SwapLL {
 

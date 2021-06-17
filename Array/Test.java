@@ -1,39 +1,35 @@
 package Array;
 
-import Algorithms.InsertionSort;
-/**
- * @author vivek nimbolkar
- *
- */
-public class Test {
+class Test{
 
-	public void insertionSort(int[] arr){
+    Node head;
 
-		int n = arr.length;
+    static class Node{
+        int data;
+        Node next;
+        Node(int data){
+            this.data = data;
+            this.next = null;
+        }
+    }
 
-		for (int i = 0; i < n; i++) {
+    public static void main(String[] args) {
 
-			int key = arr[i];
-			int j = i -1;
+        Test test = new Test();
 
-			while (j >= 0 && arr[j] > key ){
-				arr[j+1] = arr[j];
-				j--;
-			}
+        test.head = new Node(10);
+        Node second = new Node(20);
+        Node third = new Node(30);
+        Node fourth = new Node(40);
+        Node fifth = new Node(50);
+        Node sixth = new Node(60);
 
-			arr[j+1] = key;
-		}
-	}
+        test.head.next = second;
+        second.next = third;
+        third.next = fourth;
+        fourth.next = fifth;
+        fifth.next = sixth;
 
-	public static void main(String[] args) {
-		Test t = new Test();
-		InsertionSort is = new InsertionSort();
 
-		int[] a = {34,32,7,3,76,9,5,87,3,85,465,4,6,2,6,5};
-
-		t.insertionSort(a);
-		is.printSortedArray(a);
-
-	}
-
+    }
 }

@@ -1,6 +1,4 @@
-package Linked_List;
-
-import java.sql.Struct;
+package Linked_List.Singly_Linked_List;
 
 public class SearchingLinkedList {
 
