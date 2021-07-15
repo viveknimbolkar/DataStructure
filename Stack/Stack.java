@@ -13,54 +13,48 @@ public class Stack {
 
     //add element to the stack
     boolean pushItem(int item){
-        //first of all check if the stack is overflow or not
-        if (isStackEmpty())
-            return false; //if stack is empty
-        else{
-            stack[top++] = item; //add the item to the next position in an array
-            System.out.println(item + " "+ " is added into the stack.");
-            return true; //if item successfully pushed
-        }
+       if (top >= (MAX - 1)){
+           System.out.println("Stack overflow");
+           return false;
+       }else {
+           stack[++top] = item;
+           System.out.println(item+" is added into stack");
+           return true;
+       }
 
     }
 
 
     //remove item from the stack
     int popItem(){
-       if (isStackEmpty())
+       if (top < 0){
            System.out.println("Stack is empty");
+           return 0;
+       }
        else {
            int temp = stack[top--];
            System.out.println(stack[top] + " "+" is removed out from stack.");
-           return stack[top];
+           return temp;
        }
-       return 0;
     }
 
 
     //check weather the stack is empty or not
     boolean isStackEmpty(){
-        if (top < 0)
-            return true; //if stack is empty
-        return false; //if stack is not empty
+            return (top < 0);
     }
 
 
-    //print the items of stack
-//    public void printStackElements(){
-//        for (int i= MAX-1; i < MAX; i--){
-//            System.out.println(i+"  "+stack[i]);
-//            if (i == 0)
-//                break;
-//        }
-//    }
-
     //find the top most item
     public int findTopItem(){
-        if (isStackEmpty())
+        if (top < 0){
+
             return 0;
-        else
-            return stack[top];
+        }
+        else{
+            int x = stack[top];
+            return x;
+        }
     }
 
     public static void main(String[] args) {
@@ -74,5 +68,6 @@ public class Stack {
         st.pushItem(60);
 
         System.out.println(st.isStackEmpty());
+        System.out.println(st.findTopItem());
     }
 }
