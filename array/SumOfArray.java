@@ -1,4 +1,4 @@
-package Array;
+package array;
 /*
  * @author Vivek Nimbolkar
  * Sum of given array

@@ -1,5 +1,5 @@
 //implementation of doublylinkedlist
-package Linked_List.Doubly_Linked_List;
+package linkedlist.doubly;
 
 public class DoublyLinkedList {
 

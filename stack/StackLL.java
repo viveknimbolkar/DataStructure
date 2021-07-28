@@ -8,7 +8,7 @@ STACK VISUAL REPRESENTATION
 | head.next.next.next.next          |
 |___________________________________|
  */
-package Stack;
+package stack;
 
 public class StackLL {
 

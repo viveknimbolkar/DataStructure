@@ -1,5 +1,4 @@
-package Array;
-import java.util.Iterator;
+package array;
 
 /**
  * @author vivek

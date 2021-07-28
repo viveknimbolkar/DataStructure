@@ -1,4 +1,4 @@
-package Linked_List.Singly_Linked_List;
+package linkedlist.singly;
 
 public class DeleteLinkedList {
     Node head;

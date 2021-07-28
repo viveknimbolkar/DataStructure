@@ -1,4 +1,4 @@
-package Stack;
+package stack;
 
 //Implementation of stack using array DS
 public class Stack {

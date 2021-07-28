@@ -1,4 +1,4 @@
-package Linked_List.Singly_Linked_List;
+package linkedlist.singly;
 /*
 This is a linked list program. Here i perform traversal and insertion.
 head = First Node
