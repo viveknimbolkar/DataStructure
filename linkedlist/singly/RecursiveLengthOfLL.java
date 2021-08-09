@@ -38,8 +38,7 @@ public class RecursiveLengthOfLL {
 
     //recursive method to find linked list length
     public int findLength(Node head){
-        if (head == null)
-            return 0;
+        if (head == null) return 0;
         return 1 + findLength(head.next);
     }
 
