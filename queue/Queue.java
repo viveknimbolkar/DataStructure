@@ -12,6 +12,7 @@ package queue;
     int[] queue;
 
     //initialize constructore for q
+    //array implementation of queue
     public QueueInitialize(int capacity) {
         this.front = 0;
         this.rear = -1;
@@ -37,7 +38,7 @@ package queue;
      }
 
     //queue status
-     public boolean isQueueEmpty(){
+    public boolean isQueueEmpty(){
         return size==0;
      }
     public boolean isQueueFull(){
