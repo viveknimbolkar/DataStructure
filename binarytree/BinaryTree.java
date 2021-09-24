@@ -1,5 +1,6 @@
 package binarytree;
 /*
+ * TC= O(n)
  *    	 Node
  *    	 /  \
  *    	/	 \

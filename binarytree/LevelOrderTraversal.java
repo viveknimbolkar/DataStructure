@@ -30,7 +30,8 @@ public class LevelOrderTraversal {
     void currentLevelNodes(Node root, int level){
         if (root == null)
             return;
-//        level are start from 0. the 0th level is root level. We can directly print the root node. So we are going to
+//        level are start from 0. the 0th leveCral is root level. We can directly print the root node. So we are
+//        going to
 //        start from 1 level. Use recursive function.
         if (level == 1)
             System.out.println(root.data);
