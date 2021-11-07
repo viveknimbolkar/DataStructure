@@ -14,7 +14,7 @@ public class LevelOrderTraversal {
     //find the height of the tree using recursive function
     int height(Node root){
         //if the root nodd is null then do nothing
-        if (root == null)
+        if (root == null) // base case
             return 0;
         //recursive function
         int leftHeight = height(root.left);
