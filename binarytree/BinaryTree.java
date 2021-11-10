@@ -54,7 +54,6 @@ public class BinaryTree {
 		postorderTraversal(root.left);
 		postorderTraversal(root.right);
 		System.out.println(root.data+" is a root");
-
 	}
 
 	//check if it is a full binary tree or not
