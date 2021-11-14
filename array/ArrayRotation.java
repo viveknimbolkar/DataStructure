@@ -4,13 +4,13 @@ package array;
 public class ArrayRotation {
 	
 	//Rotate the array to left by one
-	void leftRotate(int arr[], int size, int place) {
+	void leftRotate(int[] arr, int size, int place) {
 		for(int i = 0; i < place; i++)
 			leftRotateByOne(arr, size); //call a method to rotate one by one
 	}
 	
 	//Rotate the array
-	void leftRotateByOne(int arr[], int size) {
+	void leftRotateByOne(int[] arr, int size) {
 		int i, temp;
 		temp = arr[0]; //creating a temperary array
 		for(i = 0; i < size - 1; i++)
@@ -19,7 +19,7 @@ public class ArrayRotation {
 	}
 	
 	//Print the array
-	void printArray(int arr[], int size) {
+	void printArray(int[] arr, int size) {
 		for(int i = 0; i < size; i++)
 			System.out.print(arr[i]+" ");
 		System.out.println();
@@ -29,9 +29,10 @@ public class ArrayRotation {
 		
 		ArrayRotation rotateArray = new ArrayRotation();
 		
-		int test[] = {1,2,3,4,5,6,7,8,9};
-		
-		rotateArray.leftRotate(test, test.length, 3);
+		int[] test = {1,2,3,4,5,6,7,8,9};
+
+		rotateArray.printArray(test, test.length);
+		rotateArray.leftRotate(test, test.length, 5);
 		rotateArray.printArray(test, test.length);
 	}
 }

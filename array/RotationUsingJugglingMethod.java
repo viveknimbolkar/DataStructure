@@ -11,9 +11,9 @@ public class RotationUsingJugglingMethod {
             temp = arr[i]; //store the first set of element
             j = i;
             while (true){
-                k = j+rotateby;
-                if (k >= size)
-                    k = k-size;
+                k = j+rotateby; // in k we are getting the elements of next set
+                if (k >= size) // if we are trying to access out of bound index element
+                    k = k-size; // then get the last element of the respective set
                 if(i == k) break;
                 arr[j] = arr[k];
                 j = k;

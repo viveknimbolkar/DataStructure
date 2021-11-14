@@ -3,7 +3,7 @@ package array;
 public class ReverseArrayRotation {
 
 	//reverse the array
-	void reverseArray(int arr[], int rotateby) {
+	void reverseArray(int[] arr, int rotateby) {
 		if (rotateby == 0) return;
 		int arrayLength = arr.length;
 		rotateby = rotateby % arrayLength;
@@ -19,7 +19,7 @@ public class ReverseArrayRotation {
 	}
 	
 	//reverse a single array
-	void reverseArrayByOne(int arr[], int start, int end) {
+	void reverseArrayByOne(int[] arr, int start, int end) {
 		int temp; //create a temperary variable for swapping
 		while (start < end) {
 			//swapping the array one by one
