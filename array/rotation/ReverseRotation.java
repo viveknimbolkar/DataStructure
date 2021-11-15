@@ -1,6 +1,6 @@
-package array;
+package array.rotation;
 
-public class ReverseArrayRotation {
+public class ReverseRotation {
 
 	//reverse the array
 	void reverseArray(int[] arr, int rotateby) {
@@ -43,7 +43,7 @@ public class ReverseArrayRotation {
 //                   [ A  ][     B    ]
 		int arrayLength = data.length;
 		int rotate = 2;
-		ReverseArrayRotation reverse = new ReverseArrayRotation();
+		ReverseRotation reverse = new ReverseRotation();
 		reverse.reverseArray(data, rotate);
 		reverse.printArray(data);
 	}

@@ -1,7 +1,7 @@
-package array;
+package array.rotation;
 
 // O(n)
-public class ArrayRotation {
+public class OneByOne {
 	
 	//Rotate the array to left by one
 	void leftRotate(int[] arr, int size, int place) {
@@ -19,7 +19,8 @@ public class ArrayRotation {
 	}
 	
 	//Print the array
-	void printArray(int[] arr, int size) {
+	void printArray(int[] arr) {
+		int size = arr.length;
 		for(int i = 0; i < size; i++)
 			System.out.print(arr[i]+" ");
 		System.out.println();
@@ -27,12 +28,12 @@ public class ArrayRotation {
 
 	public static void main(String[] args) {
 		
-		ArrayRotation rotateArray = new ArrayRotation();
+		OneByOne rotateArray = new OneByOne();
 		
 		int[] test = {1,2,3,4,5,6,7,8,9};
 
-		rotateArray.printArray(test, test.length);
-		rotateArray.leftRotate(test, test.length, 5);
-		rotateArray.printArray(test, test.length);
+		rotateArray.printArray(test);
+		rotateArray.leftRotate(test, test.length, 3);
+		rotateArray.printArray(test);
 	}
 }

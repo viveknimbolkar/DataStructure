@@ -1,6 +1,6 @@
-package array;
+package array.rotation;
 
-public class RotationUsingJugglingMethod {
+public class JugglingMethod {
 
     void leftRotate(int[] arr, int size, int rotateby){
         rotateby = rotateby % size;
@@ -36,7 +36,7 @@ public class RotationUsingJugglingMethod {
     }
 
     public static void main(String[] args) {
-        RotationUsingJugglingMethod rujm = new RotationUsingJugglingMethod();
+        JugglingMethod rujm = new JugglingMethod();
         int[] arr = {10,20,30,40,50,60,70};
 
         rujm.printArray(arr);
