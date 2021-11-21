@@ -33,7 +33,7 @@ public class EquilibriumPoint {
         int currentSum = 0;
         //now iterate and subtract the current element from whole sum and check l==r
         for (int i = 0; i < arr.length; i++) {
-            sumOfWholeArr -= arr[i];
+            sumOfWholeArr = sumOfWholeArr - arr[i];
             //check equlib point
             if (currentSum == sumOfWholeArr)
                 return i;
