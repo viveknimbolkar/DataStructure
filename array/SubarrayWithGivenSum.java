@@ -1,5 +1,5 @@
 package array;
-
+// https://practice.geeksforgeeks.org/problems/subarray-with-given-sum-1587115621/1
 import java.util.ArrayList;
 
 public class SubarrayWithGivenSum {
@@ -11,15 +11,19 @@ public class SubarrayWithGivenSum {
         int start=0;
 
         for(int j=1; j<=n; j++){
+            // get subarray having sum greater than S (find that subarray)
             while(current_sum > s && start < j-1){
                 current_sum = current_sum-arr[start];
                 start++;
             }
+            // if we found s and subarray then add first starting index and last index of that
+            // subarray
             if(current_sum == s){
                 tempArr.add(start+1);
                 tempArr.add(j);
                 return tempArr;
             }
+
             if(j<n){
                 current_sum=current_sum + arr[j];
             }

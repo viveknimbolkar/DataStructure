@@ -1,7 +1,5 @@
 package array;
 
-import java.util.Arrays;
-
 // https://practice.geeksforgeeks.org/problems/trapping-rain-water-1587115621/1
 public class TrappingWater {
 
@@ -29,8 +27,6 @@ public class TrappingWater {
         }
         return totalWater;
     }
-
-
 
     public static void main(String[] args) {
         TrappingWater tw = new TrappingWater();

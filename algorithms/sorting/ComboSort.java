@@ -1,5 +1,5 @@
 package algorithms.sorting;
-
+// Best case: O(nlogn)
 public class ComboSort {
 
     int getNextGap(int currentGap){

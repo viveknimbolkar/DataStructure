@@ -1,8 +1,6 @@
 package array;
 
-import java.util.Arrays;
-
-// Unsolved
+// https://practice.geeksforgeeks.org/problems/row-with-max-1s0023/1/
 public class RowWithMax1s {
 
     int findThatRow(int[][] arr){

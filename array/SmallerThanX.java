@@ -3,10 +3,11 @@ package array;
 public class SmallerThanX {
 
     int immediateSmaller(int[] arr, int X){
-        int result = -1;
+        int result = 0;
+        // find all the smaller elements than X and store it into the result
         for (int i = 0; i < arr.length ; i++) {
             if (arr[i] < X){
-                result = Math.max(arr[i],result);
+                result = Math.min(arr[i],result);
             }
         }
         return arr[result];
