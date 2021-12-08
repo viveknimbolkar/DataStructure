@@ -1,7 +1,8 @@
 package algorithms.searching;
-
+// O(logn)
 public class BinarySearch {
 
+    //Method 1: Recursive method
     int binarySearch(int[] arr, int left, int right, int item){
         if (left <= right){
             int mid = left + (right - 1)/2;
@@ -18,10 +19,25 @@ public class BinarySearch {
         return -1;
     }
 
+    //Method 2: Using iterator
+    int binarySearchIterator(int[] arr, int l,int r,int item){
+        while (l<=r){
+            int m = l +(r-1)/2;
+
+            if (arr[m] == item)
+                return m;
+            if (arr[m] < item)
+                l = m+1;
+            else
+                r = m-1;
+        }
+        return -1;
+    }
+
     public static void main(String[] args) {
         BinarySearch binarySearch = new BinarySearch();
         int[] data = {1,2,3,4,5,6,7,8,9,10};
-        int foundAt = binarySearch.binarySearch(data,0,data.length,9);
+        int foundAt = binarySearch.binarySearchIterator(data,0,data.length,9);
         System.out.println(foundAt+1);
     }
 }

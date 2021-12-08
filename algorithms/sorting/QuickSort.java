@@ -10,7 +10,7 @@ public class QuickSort {
 
     static int partationArray(int[] arr, int low, int high){
         int pivotElement = arr[high]; // last element of an array is the pivot element
-        int i = (low -1);
+        int i = (low-1);
         //now iterate and swap all small element in left side and all large element at right side
         for (int j = low; j <= high-1; j++) {
             // swap element is jth element is less than pivot element
