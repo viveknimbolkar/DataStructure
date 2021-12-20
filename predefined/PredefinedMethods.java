@@ -1,4 +1,7 @@
 package predefined;
+
+import linkedlist.singly.LinkedList;
+
 public class PredefinedMethods {
 
     public void swap(int[] arr, int a, int b){

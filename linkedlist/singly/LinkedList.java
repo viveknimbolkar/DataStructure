@@ -9,7 +9,7 @@ public class LinkedList{
 	Node head; //head (starting point)
 
 	//create a static class to get data and address of next node
-	static class Node{
+	public static class Node{
 		int data; //variable to store data
 		Node next; //address of next node
 		//node constructor
@@ -115,8 +115,8 @@ public class LinkedList{
 
 	public static void main(String[] args) {
 		LinkedList list = new LinkedList();
-		list.head = new Node(10); //assign the first node to the head
 
+		list.head = new Node(10); //assign the first node to the head
 		Node two = new Node(20);
 		Node three = new Node(30);
 		Node four = new Node(40);
@@ -125,15 +125,11 @@ public class LinkedList{
 		two.next = three;
 		three.next = four;
 
-		//adding new node at the starting
-//		list.addAtBeginning(77);  //adding at the beginning
-//		list.addAtGivenNode(three, 88); //adding after the giving node
-//		list.addAtEnd(56);
-		System.out.println("Before Delete ");
 		list.printList(list.head);
-//		list.deleteNodeAtPosition(0);
-		System.out.println("After Delete ");
+		System.out.println();
+		list.addAtBeginning(100);
 		list.printList(list.head);
+
 	}
 
 }
