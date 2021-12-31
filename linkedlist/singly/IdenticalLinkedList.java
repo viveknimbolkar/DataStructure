@@ -1,4 +1,7 @@
 package linkedlist.singly;
+
+import predefined.Node;
+
 // https://practice.geeksforgeeks.org/problems/identical-linked-lists/1/
 public class IdenticalLinkedList {
 

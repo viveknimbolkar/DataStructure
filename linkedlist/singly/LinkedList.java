@@ -112,7 +112,6 @@ public class LinkedList{
 		prev.next = temp.next;
 	}
 
-
 	public static void main(String[] args) {
 		LinkedList list = new LinkedList();
 

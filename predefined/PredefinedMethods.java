@@ -4,6 +4,15 @@ import linkedlist.singly.LinkedList;
 
 public class PredefinedMethods {
 
+    public String strReverse(String str){
+        char[] chArr = str.toCharArray();
+        String result = "";
+        for (int i = str.length(); i > 0 ; i--) {
+            result += str.charAt(i);
+        }
+
+        return result;
+    }
     public void swap(int[] arr, int a, int b){
         int temp = arr[a];
         arr[a] = arr[b];

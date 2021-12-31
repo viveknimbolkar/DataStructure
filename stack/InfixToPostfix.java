@@ -38,7 +38,7 @@ public class InfixToPostfix {
                 stack.pop(); // pop '('
             }else {
                 // check for the precedence. if the precedence of the current character is less than the
-                // top most character of stack then pop is and assign to the result
+                // top most character of stack then pop it and assign to the result
                 while (!stack.isEmpty() && precedence(currentCharacter) <= precedence(stack.peek())){
                     result += stack.pop();
                 }
@@ -59,7 +59,7 @@ public class InfixToPostfix {
     public static void main(String[] args) {
         InfixToPostfix infixToPostfix = new InfixToPostfix();
 
-        String expression = infixToPostfix.infixToPostfix("(a+b)");
+        String expression = infixToPostfix.infixToPostfix("(a+b-c)");
         System.out.println(expression);
     }
 }

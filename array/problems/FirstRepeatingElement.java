@@ -3,7 +3,7 @@ package array.problems;
 import java.util.HashSet;
 
 // https://practice.geeksforgeeks.org/problems/first-repeating-element4018/1
-public class FirstRepeatingElement {
+public class  FirstRepeatingElement {
 
     // Method 1: Using hashset and adding min value to the hashset
     int firstRepeated(int[] arr){

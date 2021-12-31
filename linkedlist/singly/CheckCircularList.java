@@ -1,4 +1,7 @@
 package linkedlist.singly;
+
+import predefined.Node;
+
 // https://practice.geeksforgeeks.org/problems/circular-linked-list/1/
 public class CheckCircularList {
 
