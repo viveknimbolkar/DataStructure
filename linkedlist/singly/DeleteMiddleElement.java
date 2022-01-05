@@ -3,6 +3,8 @@ package linkedlist.singly;
 import predefined.Node;
 
 // https://practice.geeksforgeeks.org/problems/delete-middle-of-linked-list/1/
+// https://practice.geeksforgeeks.org/problems/delete-middle-of-linked-list/1/
+
 public class DeleteMiddleElement {
 
     Node deleteMiddleElement(Node head){

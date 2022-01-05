@@ -7,7 +7,7 @@ package linkedlist.singly;
  */
 import java.util.HashSet;
 
-public class DetectLoopInLL {
+public class DetectLoop {
 
     Node head;
     static class Node{
@@ -37,7 +37,7 @@ public class DetectLoopInLL {
     }
 
     public static void main(String[] args) {
-        DetectLoopInLL dlill = new DetectLoopInLL();
+        DetectLoop dlill = new DetectLoop();
 
         dlill.head = new Node(10);
         Node two = new Node(20);
