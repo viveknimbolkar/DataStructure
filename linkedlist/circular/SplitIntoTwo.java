@@ -5,10 +5,26 @@ import predefined.Node;
 public class SplitIntoTwo {
 
     void splitList(Node node){
+        Node n1 , n2, slow = node, fast = node;
 
+        while (fast.next != null && fast.next.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
 
+        // if list is of even no.
+        if (fast.next.next == node){
+            fast = fast.next;
+        }
 
+        n1 = node.head;
+        if(node.next != node){
+            n2 = slow.next;
+        }
+        fast.next = slow.next;
+        slow.next = node;
     }
+
 
     public static void main(String[] args) {
         Node node = new Node();
@@ -23,5 +39,6 @@ public class SplitIntoTwo {
 
         node.printCircularList();
         split.splitList(node.head);
+        node.printCircularList();
     }
 }

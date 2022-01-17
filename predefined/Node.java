@@ -17,6 +17,42 @@ public class Node {
         head = newNode;
     }
 
+    public int getListSize(Node node){
+        int size = 0;
+        Node temp = node;
+        while (temp != null){
+            size++;
+            temp = temp.next;
+        }
+        return size;
+    }
+
+    public Node getMidNode(Node node){
+        Node slow = node, fast = node;
+        while(fast.next != null && fast.next.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
+    }
+
+    public void pushAtEnd(int data){
+        Node mainNode = new Node();
+        Node newNode = new Node(data);
+        if (mainNode.head == null) {
+            head = newNode;
+            return;
+        }
+        Node temp = mainNode;
+
+        while (temp.next != null){
+            temp = temp.next;
+        }
+        temp.next = newNode;
+        newNode.next = null;
+
+    }
+
     public void printCircularList(){
         Node temp = head;
         do{
@@ -28,6 +64,10 @@ public class Node {
 
     public void printList(){
         Node temp = head;
+        if (temp == null){
+            System.out.println("List is empty!");
+            return;
+        }
         while (temp != null){
             System.out.print(temp.data+"->");
             temp = temp.next;

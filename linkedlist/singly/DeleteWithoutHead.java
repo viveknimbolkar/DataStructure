@@ -1,7 +1,6 @@
 package linkedlist.singly;
 
 import predefined.Node;
-
 // https://practice.geeksforgeeks.org/problems/delete-without-head-pointer/1/
 public class DeleteWithoutHead {
 

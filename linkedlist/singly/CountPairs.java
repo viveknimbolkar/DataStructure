@@ -1,5 +1,6 @@
 package linkedlist.singly;
 // https://practice.geeksforgeeks.org/problems/count-pairs-whose-sum-is-equal-to-x/1/
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
 
@@ -26,6 +27,22 @@ public class CountPairs {
                 if ((l1Element + itr2.next()) == x)
                     count++;
             }
+        }
+        return count;
+    }
+
+    //Method: 3 Highly optimized solution
+    int countPairs3(LinkedList<Integer> l1, LinkedList<Integer> l2, int x){
+        HashSet<Integer> hash = new HashSet<>();
+        int count = 0;
+
+        for (Integer element: l1) {
+            hash.add(element);
+        }
+
+        for (int i = 0; i < l2.size(); i++) {
+            if (hash.contains(x - l2.get(i)))
+                count++;
         }
         return count;
     }
