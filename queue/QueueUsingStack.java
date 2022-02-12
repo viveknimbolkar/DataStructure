@@ -4,8 +4,8 @@ import java.util.Stack;
 
 public class QueueUsingStack {
 
-    Stack<Integer> s1 = new Stack<Integer>();
-    Stack<Integer> s2 = new Stack<Integer>();
+    Stack<Integer> s1 = new Stack<>();
+    Stack<Integer> s2 = new Stack<>();
 
     public void enQueue(int item){
         //move all element from s1 to s2

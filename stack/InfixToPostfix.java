@@ -3,7 +3,6 @@ package stack;
 import java.util.Stack;
 
 public class InfixToPostfix {
-
     //this method will return precedence of symbol
     int precedence(char ch){
         if (ch == '^'){
@@ -19,11 +18,9 @@ public class InfixToPostfix {
 
     String infixToPostfix(String str){
         Stack<Character> stack = new Stack<>();
-        String result = new String("");
-
+        String result ="";
         //reading the expression from left ot right
         for (int i = 0; i < str.length(); i++) {
-
             char currentCharacter = str.charAt(i); // get the current character from expression
             // if current character is a letter or digit then store into result
             if (Character.isLetterOrDigit(currentCharacter)){

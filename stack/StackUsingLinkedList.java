@@ -10,7 +10,7 @@ STACK VISUAL REPRESENTATION
  */
 package stack;
 
-public class StackLL {
+public class StackUsingLinkedList {
 
     Node head;
     static class Node{
@@ -23,7 +23,7 @@ public class StackLL {
 
 
     //check if ll is empty
-    public boolean isEmpty(){
+     boolean isEmpty(){
         if (head == null){
             System.out.println("Stack is empty!");
             return true;
@@ -36,7 +36,7 @@ public class StackLL {
 
 
     //add item into the ll stack
-    public void pushItem(int item){
+     void pushItem(int item){
         Node newNode = new Node(item);
         //assign newnode to the head if head is empty
         if (head == null)
@@ -50,7 +50,7 @@ public class StackLL {
     }
 
     //remove item from stack ll
-    public void removeItem(){
+     void removeItem(){
 
         int poppedItem = Integer.MIN_VALUE;
         if (head == null)
@@ -62,7 +62,7 @@ public class StackLL {
     }
 
     //print the stack items
-    public void printStack(){
+     void printStack(){
         Node temp = head;
         while (temp.next != null){
             System.out.println(temp.data);
@@ -71,7 +71,7 @@ public class StackLL {
     }
 
     public static void main(String[] args) {
-        StackLL sll = new StackLL();
+        StackUsingLinkedList sll = new StackUsingLinkedList();
 
         sll.pushItem(10);
         sll.pushItem(20);
