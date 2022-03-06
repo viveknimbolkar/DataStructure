@@ -1,55 +1,48 @@
+import predefined.TNode;
+
+import java.util.Stack;
+
 class Temp {
+    TNode root;
+    Temp(int data){this.root = new TNode(data);}
+    Temp(){};
 
-    int[] queue;
-    int front, rear, size, capacity;
+    int height(TNode node){
+        if (node == null) return 0;
+        int left = height(node.left);
+        int right = height(node.right);
 
-    Temp(int capacity){
-        this.capacity = capacity;
-        this.front = 0;
-        this.rear = -1;
-        this.queue = new int[capacity];
+        if (left > right) return left+1;
+        return right+1;
     }
 
-    void enqueue(int data){
-        if (isFull())
-            return;
-        queue[++rear] = data;
-        size++;
-    }
-
-    int dequeue(){
-        if (isEmpty())
-            return -1;
-       return queue[size--];
-    }
-
-    int size(){
-        return size;
-    }
-
-    boolean isEmpty(){
-        return rear < 0;
-    }
-
-    boolean isFull(){
-      return rear > capacity;
-    }
-
-    public static void main(String[] args) {
-        Temp t = new Temp(10);
-        t.enqueue(10);
-        t.enqueue(20);
-        t.enqueue(30);
-        t.enqueue(40);
-        t.enqueue(50);
-        System.out.println(t.dequeue());
-        System.out.println(t.dequeue());
-        System.out.println(t.size());
-        System.out.println(t.isEmpty());
-        System.out.println(t.isFull());
-
-        for (int i = 0; i < t.size; i++) {
-            System.out.println(t.queue[i]);
+    void printCurrLevel(TNode n,int l){
+        if (n == null)return;
+        if (l ==1)
+            System.out.println(n.data);
+        else {
+            printCurrLevel(n.left,l-1);
+            printCurrLevel(n.right,l+1);
         }
+    }
+
+    void levelOrder(TNode n){
+        int h = height(n);
+        printCurrLevel(n,h);
+    }
+    public static void main(String[] args) {
+        Temp t = new Temp();
+        t.root = new TNode(1);
+        t.root.left = new TNode(2);
+        t.root.right = new TNode(3);
+        t.root.left.left = new TNode(4);
+        t.root.left.right = new TNode(5);
+        t.root.left.right.left = new TNode(7);
+        t.root.left.right.right = new TNode(8);
+        t.root.left.right.right.right = new TNode(9);
+        t.root.right.right = new TNode(6);
+
+        t.levelOrder(t.root);
+
     }
 }

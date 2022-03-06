@@ -6,24 +6,22 @@ import java.util.Stack;
 public class ValidSubstring {
 
     int validateSubstring(String exp){
-        Stack<Character> s = new Stack<>();
-        int length = 0;
-
-        for (int i = 0; i < exp.length(); i++) {
-            char ch  = exp.charAt(i);
-            if (isLeftBracket(ch)){
-                s.push(ch);
-            }else if (ch == ')') {
-                if (!s.isEmpty() && s.peek() == '('){
-                    length++;
-                    while (!s.isEmpty() && s.peek() != '(') {
-                        s.pop();
-                        length--;
-                    }
+        int result = 0;
+        Stack<Integer> s = new Stack<>();
+        s.push(-1);
+        for(int i = 0; i< exp.length();i++){
+            if(exp.charAt(i) == '('){
+                s.push(i);
+            }else{
+                s.pop();
+                if(!s.isEmpty()){
+                    result = Math.max(result, i-s.peek());
+                }else{
+                    s.push(i);
                 }
             }
         }
-        return length;
+        return result;
     }
 
     boolean isLeftBracket(char ch){

@@ -22,7 +22,6 @@ public class GetMiddle {
         node.head.next.next = new Node(3);
         node.head.next.next.next = new Node(4);
         node.head.next.next.next.next = new Node(5);
-
         System.out.println(mid.getMiddle(node.head));
 
     }
