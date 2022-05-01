@@ -1,48 +1,73 @@
-import predefined.TNode;
+import java.util.Scanner;
 
-import java.util.Stack;
-
-class Temp {
-    TNode root;
-    Temp(int data){this.root = new TNode(data);}
-    Temp(){};
-
-    int height(TNode node){
-        if (node == null) return 0;
-        int left = height(node.left);
-        int right = height(node.right);
-
-        if (left > right) return left+1;
-        return right+1;
-    }
-
-    void printCurrLevel(TNode n,int l){
-        if (n == null)return;
-        if (l ==1)
-            System.out.println(n.data);
-        else {
-            printCurrLevel(n.left,l-1);
-            printCurrLevel(n.right,l+1);
-        }
-    }
-
-    void levelOrder(TNode n){
-        int h = height(n);
-        printCurrLevel(n,h);
-    }
+public class Temp {
     public static void main(String[] args) {
         Temp t = new Temp();
-        t.root = new TNode(1);
-        t.root.left = new TNode(2);
-        t.root.right = new TNode(3);
-        t.root.left.left = new TNode(4);
-        t.root.left.right = new TNode(5);
-        t.root.left.right.left = new TNode(7);
-        t.root.left.right.right = new TNode(8);
-        t.root.left.right.right.right = new TNode(9);
-        t.root.right.right = new TNode(6);
+        Scanner sc = new Scanner(System.in);
+        int tcase = sc.nextInt();
 
-        t.levelOrder(t.root);
+        for (int i = 0; i < tcase; i++) {
+            int arrSize = sc.nextInt();
+            String[] arr = new String[arrSize];
 
+            for (int j = 0; j < arrSize; j++) {
+                arr[j] = sc.nextLine();
+            }
+
+            int maxLen = 0;
+
+            int result = t.maxLengthString(arr, 0, arrSize,"", maxLen);
+            System.out.println("Max Length: "+result);
+            sc.next();
+        }
+
+    }
+
+    int maxLengthString(String[] arr, int index, int N, String str, int maxLen){
+        // Checking the string
+        if (index == N) {
+            return 0;
+        }
+
+        // Dont Include the string
+        maxLengthString(arr, index + 1, N, str, maxLen);
+
+        // Include the string
+        str += arr[index];
+
+        if(isValid(str)) {
+            if(str.length() > maxLen) {
+                maxLen = str.length();
+            }
+        }
+        maxLengthString(arr, index + 1, N, str, maxLen);
+
+        return maxLen;
+    }
+
+    boolean isValid(String str){
+        int[] freq = new int[26];
+
+        for (int i = 0; i < freq.length-1; i++)
+            freq[i] = 0;
+
+
+        // Store the frequency of each character
+        for (int i = 0; i < str.length(); i++)
+        {
+            freq[str.charAt(i) - 'a']++;
+        }
+
+
+        // Check if the frequency of any character is odd, return false
+        for (int i = 0; i < 26; i++)
+        {
+            if (freq[i] % 2 == 1)
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
 }

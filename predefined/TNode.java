@@ -12,7 +12,7 @@ public class TNode {
     public void inorder(TNode n){
         if (n == null) return;
         inorder(n.left);
-        System.out.println(n.data);
+        System.out.print(n.data+" ");
         inorder(n.right);
     }
 }
