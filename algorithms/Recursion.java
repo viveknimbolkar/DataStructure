@@ -12,6 +12,4 @@ public class Recursion {
         Recursion recursion = new Recursion();
         System.out.println(recursion.findFactorial(5));
     }
-
-
 }
