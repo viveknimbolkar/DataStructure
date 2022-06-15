@@ -1,6 +1,5 @@
 package array.problems;
-
-// This method is only applicable for sorted array
+// https://leetcode.com/problems/remove-duplicates-from-sorted-array/submissions/
 
 class RemoveDuplicates {
 
@@ -8,7 +7,7 @@ class RemoveDuplicates {
         int[] tempArr = new int[size];
 
         int j = 0;
-
+        // storing only unique elements into tempArr
         for (int i = 0; i < size -1; i++) {
             if (arr[i] != arr[i+1]){
                 tempArr[j] = arr[i];
@@ -17,7 +16,7 @@ class RemoveDuplicates {
         }
 
         tempArr[j++] = arr[size - 1];
-
+        // replacing the elements of arr[i] with tempArr
         for (int i = 0; i < j; i++) {
             arr[i] = tempArr[i];
         }
