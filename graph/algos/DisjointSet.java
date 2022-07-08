@@ -1,9 +1,7 @@
-package graph;
+package graph.algos;
 
 // A Java program to implement Disjoint Set Data
 // Structure.
-import java.io.*;
-import java.util.*;
 
 class Set {
     int[] rank, parent;
