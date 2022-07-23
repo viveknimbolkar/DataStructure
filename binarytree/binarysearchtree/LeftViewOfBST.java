@@ -1,4 +1,4 @@
-package binarytree;
+package binarytree.binarysearchtree;
 // TODO:INCOMPLETE
 import predefined.TNode;
 

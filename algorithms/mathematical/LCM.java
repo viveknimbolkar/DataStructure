@@ -10,6 +10,7 @@ public class LCM {
         return -1;
     }
 
+
     public static void main(String[] args) {
         LCM lcm = new LCM();
         int a = 10;

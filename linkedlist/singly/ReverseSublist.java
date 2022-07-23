@@ -4,6 +4,63 @@ import predefined.Node;
 // https://practice.geeksforgeeks.org/problems/reverse-a-sublist-of-a-linked-list/1/
 public class ReverseSublist {
 
+    Node reverseList(Node head){
+        Node curr = head, prev = null, nextNode = null;
+        while (curr != null){
+            nextNode = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = nextNode;
+        }
+        return prev;
+    }
+
+    // Method-1
+    Node reverseBetween2(Node head, int n, int m){
+        if (head == null) return null;
+        Node curr = head, prev = null;
+        int count = 1;
+
+        // get the starting node
+        while (m != count){
+            prev = curr;
+            curr = curr.next;
+            count++;
+        }
+        Node startNode = curr;
+
+        // get the last node of sublist to reverse
+        while (n != count){
+            curr = curr.next;
+            count++;
+        }
+
+        Node end = curr.next;
+        curr.next = null;
+
+        // reverse the sublist
+        Node newlist = reverseList(startNode);
+
+        // point the prev of sublist to newlist
+        if (prev != null){
+            prev.next = newlist;
+        }
+
+        // get the end node of newlist
+        curr = newlist;
+        while (curr.next != null){
+            curr = curr.next;
+        }
+
+        // point the end node of newlist to remain ended list
+        curr.next = end;
+
+        if (m == 1) return newlist;
+        else return head;
+
+    }
+
+    // Method 2
     Node reverseBetween(Node head, int n, int m){
         if(head == null || m == n) return head;
 
@@ -18,6 +75,7 @@ public class ReverseSublist {
 
         Node workNode = newList.next;
 
+        // reverse nodes incremently
         while(m < n){
             Node temp = workNode.next;
             workNode.next = temp.next;
@@ -40,7 +98,7 @@ public class ReverseSublist {
         node.head.next.next.next.next = new Node(5);
         node.head.next.next.next.next.next = new Node(6);
 
-        int n = 4, m = 2;
-        node.printList(reverse.reverseBetween(node.head, n, m));
+        int m = 2, n = 4;
+        node.printList(reverse.reverseBetween2(node.head, n, m));
     }
 }
