@@ -7,6 +7,7 @@ public class SearchInBST {
 
     TNode searchBST(TNode root, int val) {
         while(root != null && root.data != val){
+            // if val is less than root node -> go left else right
             root = (val < root.data)?root.left:root.right;
         }
         return root;
