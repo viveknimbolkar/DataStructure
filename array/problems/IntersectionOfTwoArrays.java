@@ -22,6 +22,8 @@ public class IntersectionOfTwoArrays {
         return res;
     }
 
+    // mehod-2: using collection framework
+
     public static void main(String[] args) {
         IntersectionOfTwoArrays intersection = new IntersectionOfTwoArrays();
         int[] nums1 = {4,9,5}, nums2 = {9,4,9,8,4};
