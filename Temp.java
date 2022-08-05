@@ -5,7 +5,6 @@ class ListNode {
     ListNode(int val) { this.val = val; }
    ListNode(int val, ListNode next) { this.val = val; this.next = null; }
  }
-
 public class Temp {
     ListNode f,s;
     public static void main(String[] args) {
@@ -57,4 +56,3 @@ public class Temp {
         return tail.next;
     }
 }
-

@@ -8,7 +8,7 @@ import java.util.Stack;
 
 public class IterativeInorder {
 
-    // Method-1: Using Two stack
+    // Method-1: Using single stack
     List<Integer> getInorder(TNode root){
         List<Integer> inorder = new ArrayList<>();
         Stack<TNode> st = new Stack<>();

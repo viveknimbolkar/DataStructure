@@ -68,7 +68,7 @@ public class BoundryTraversal {
         boundry.root.left.left.right.right = new TNode(6);
 
         boundry.root.right = new TNode(7);
-        boundry.root.right.right = new TNode(8);;
+        boundry.root.right.right = new TNode(8);
         boundry.root.right.right.left = new TNode(9);
         boundry.root.right.right.left.right = new TNode(10);
         boundry.root.right.right.left.right = new TNode(11);
