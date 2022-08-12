@@ -1,23 +1,29 @@
 package binarytree;
 // https://practice.geeksforgeeks.org/problems/height-of-binary-tree/1/
 
-public class FindHeightOfTree {
-    static class TNode{
-        int root;
-        TNode left,right;
-        TNode(int data){this.root = data;left=right=null;}
-        TNode(){}
-    }
+import predefined.TNode;
 
-    TNode node;
+public class FindHeightOfTree {
+
+    static TNode root;
     int findHeightOfTree(TNode n){
         if (n == null) return -1;
-        return  Math.max(findHeightOfTree(n.left),findHeightOfTree(n.right));
+        int left = findHeightOfTree(n.left);
+        int right = findHeightOfTree(n.right);
+        if (left > right) return left+1;
+        else return right+1;
     }
 
     public static void main(String[] args) {
         FindHeightOfTree find = new FindHeightOfTree();
-        TNode node = new TNode();
 
+        root = new TNode(10);
+        root.left = new TNode(20);
+        root.left.left = new TNode(40);
+        root.left.left.left = new TNode(5);
+        root.left.right = new TNode(0);
+        root.right = new TNode(176);
+
+        System.out.println("Height is: "+find.findHeightOfTree(root));
     }
 }
