@@ -14,7 +14,7 @@ public class CombinationSum {
         return ans;
     }
 
-    void findCombinationSum(int idx,int[] arr, int target,  List<List<Integer>> ans, ArrayList<Integer>  ds){
+    void findCombinationSum(int idx, int[] arr, int target,  List<List<Integer>> ans, ArrayList<Integer>  ds){
         // when we reach at the end of an array(arr)
         if (idx == arr.length){
             if (target == 0)
