@@ -11,6 +11,7 @@ public class CombinationSum2 {
         List<List<Integer>> ans = new ArrayList<>();
         ArrayList<Integer> ds = new ArrayList<>();
         Arrays.sort(candidates);
+        findCombination(0,candidates,target,ans,ds);
         return ans;
     }
 
