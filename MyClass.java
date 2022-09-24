@@ -3,31 +3,92 @@ import java.util.Scanner;
 
 class MyClass{
 
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int t = sc.nextInt();
+    // bubble sort
+    static void bubbleSort(int[] arr){
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr.length-i-1; j++) {
+                if (arr[j] > arr[j+1]){
+                    int temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
+                }
+            }
+        }
+    }
 
-        while (t!=0){
-            int n = sc.nextInt();
-            String soldiers = sc.next();
-            char[] soldiersArr = soldiers.toCharArray();
-
-            for (int i = 0; i < n; i++) {
-                soldiersArr[i] = soldiers.charAt(i);
+    // selection sort
+    static  void selectionSort(int[] arr){
+        for (int i = 0; i < arr.length ; i++) {
+            int minEle = i;
+            for (int j = i; j < arr.length; j++) {
+                if (arr[j] < arr[minEle])
+                    minEle = j;
             }
 
-            Arrays.sort(soldiersArr);
-            int zero = 0, one = 0;
+            int temp = arr[minEle];
+            arr[minEle] = arr[i];
+            arr[i] = temp;
 
-            for (int i = 0; i < soldiersArr.length; i++) {
-                if (soldiersArr[i] == '0') zero++;
-                else one++;
+        }
+    }
+
+    // merge sort
+
+    static void merge(int[] arr, int l, int m, int r){
+        int n1 = m-l+1;
+        int n2 = r-m;
+
+        int[] L = new int[n1];
+        int[] R = new int[n2];
+
+        for (int i = 0; i < n1; i++)
+            L[i] = arr[i+l];
+
+        for (int j = 0; j < n2; j++)
+            R[j] = arr[m+1+j];
+
+        int i = 0, j = 0, k = l;
+
+        while (i < n1 && j < n2){
+            if (L[i] <= R[j]){
+                arr[k] = L[i];
+                i++;
+            }else {
+                arr[k] = R[j];
+                j++;
             }
-
-            if (zero%2 == 0) System.out.println("0");
-            else if(one%2 == 0) System.out.println("1");
-            t--;
+            k++;
         }
 
+        while (i < n1){
+            arr[k] = L[i];
+            i++;
+            k++;
+        }
+
+        while (j < n2){
+            arr[k] = R[j];
+            j++;
+            k++;
+        }
+    }
+
+    static void mergeSort(int[] arr, int l, int r){
+        if (l < r){
+            int m = l + (r-l)/2;
+            mergeSort(arr,l,m);
+            mergeSort(arr,m+1,r);
+            merge(arr,l,m,r);
+        }
+    }
+
+    static void print(int[] arr){
+        for (int a: arr)
+            System.out.print(a+" ");
+    }
+    public static void main(String[] args) {
+       int[] arr = {5,7,3,5,2,3,4,8,1,5};
+        mergeSort(arr,0,arr.length-1);
+        print(arr);
     }
 }
