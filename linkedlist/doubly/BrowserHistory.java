@@ -1,6 +1,5 @@
-package stack;
+package linkedlist.doubly;
 
-import predefined.Node;
 //https://leetcode.com/problems/design-browser-history/
 
 // doubally linked list

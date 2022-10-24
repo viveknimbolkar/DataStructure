@@ -1,4 +1,4 @@
-package recursion;
+package backtracking;
 // https://practice.geeksforgeeks.org/problems/print-1-to-n-without-using-loops-1587115620/1/
 public class PrintNNumbers {
     void printNNumbers(int n){

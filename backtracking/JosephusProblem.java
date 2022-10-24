@@ -1,4 +1,4 @@
-package recursion;
+package backtracking;
 //https://practice.geeksforgeeks.org/problems/power-of-numbers-1587115620/1/
 public class JosephusProblem {
 

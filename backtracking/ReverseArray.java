@@ -1,4 +1,4 @@
-package recursion;
+package backtracking;
 
 public class ReverseArray {
     void reverseRecursively(int[] arr, int left, int right){
