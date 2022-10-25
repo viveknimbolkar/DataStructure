@@ -13,6 +13,7 @@ public class Permutations {
         boolean[] freq = new boolean[nums.length];
         recurPermute(nums,ans,ds,freq);
         return ans;
+
     }
 
     void recurPermute(int[] nums, List<List<Integer>> ans, List<Integer> ds, boolean[] freq){
