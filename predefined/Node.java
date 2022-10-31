@@ -37,13 +37,12 @@ public class Node {
     }
 
     public void pushAtEnd(int data){
-        Node mainNode = new Node();
         Node newNode = new Node(data);
-        if (mainNode.head == null) {
+        if (head == null) {
             head = newNode;
             return;
         }
-        Node temp = mainNode;
+        Node temp = head;
 
         while (temp.next != null){
             temp = temp.next;

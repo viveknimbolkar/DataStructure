@@ -41,7 +41,8 @@ public class ReorderList {
         n.head.next.next.next.next = new Node(9);
         n.head.next.next.next.next.next = new Node(2);
 
+        n.printList(n.head);
         reorderList.reorderList(n.head);
-        n.printList();
+        n.printList(n.head);
     }
 }
