@@ -1,4 +1,4 @@
-package array.matrix;
+package array.matrix.traversal;
 // https://leetcode.com/problems/search-a-2d-matrix/
 public class SearchElement {
 

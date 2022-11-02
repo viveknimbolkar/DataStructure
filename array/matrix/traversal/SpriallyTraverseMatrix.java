@@ -1,6 +1,5 @@
-package array.matrix;
+package array.matrix.traversal;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 // https://practice.geeksforgeeks.org/problems/spirally-traversing-a-matrix-1587115621/1
