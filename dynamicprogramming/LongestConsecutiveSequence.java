@@ -1,4 +1,4 @@
-package dynamicprog;
+package dynamicprogramming;
 // https://leetcode.com/problems/longest-consecutive-sequence/
 import java.util.HashSet;
 import java.util.Set;

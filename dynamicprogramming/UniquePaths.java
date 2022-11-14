@@ -1,4 +1,4 @@
-package dynamicprog;
+package dynamicprogramming;
 
 //https://leetcode.com/problems/unique-paths/
 

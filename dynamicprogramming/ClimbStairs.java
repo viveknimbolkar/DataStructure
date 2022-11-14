@@ -1,4 +1,4 @@
-package dynamicprog;
+package dynamicprogramming;
 
 import java.util.Stack;
 // https://leetcode.com/problems/climbing-stairs/
