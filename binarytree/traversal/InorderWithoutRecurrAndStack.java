@@ -1,4 +1,4 @@
-package binarytree;
+package binarytree.traversal;
 /*
 https://www.geeksforgeeks.org/inorder-tree-traversal-without-recursion-and-without-stack/
 
@@ -10,13 +10,15 @@ https://www.geeksforgeeks.org/inorder-tree-traversal-without-recursion-and-witho
 
  */
 
+import predefined.TNode;
+
 public class InorderWithoutRecurrAndStack {
 
-    Node root;
+    TNode root;
 
-    void inorderTraversalWithoutRecursionAndStack(Node node){
+    void inorderTraversalWithoutRecursionAndStack(TNode node){
         if (node == null) return; //if the tree is empty
-        Node current , previous;
+        TNode current , previous;
         current = node;
         //now traverse through the list upto current != null
         while (current != null){
@@ -44,12 +46,12 @@ public class InorderWithoutRecurrAndStack {
 
     public static void main(String[] args) {
         InorderWithoutRecurrAndStack iwras = new InorderWithoutRecurrAndStack();
-        iwras.root = new Node(1);
-        iwras.root.left = new Node(2);
-        iwras.root.right = new Node(3);
-        iwras.root.left.left = new Node(4);
-        iwras.root.left.right = new Node(5);
-        iwras.root.right.left = new Node(6);
+        iwras.root = new TNode(1);
+        iwras.root.left = new TNode(2);
+        iwras.root.right = new TNode(3);
+        iwras.root.left.left = new TNode(4);
+        iwras.root.left.right = new TNode(5);
+        iwras.root.right.left = new TNode(6);
 
         iwras.inorderTraversalWithoutRecursionAndStack(iwras.root);
     }

@@ -24,9 +24,8 @@ public class CheckForBalanceTree {
 
     public static void main(String[] args) {
         CheckForBalanceTree check = new CheckForBalanceTree();
-        TNode n = new TNode();
 
-        n = new TNode(10);
+        TNode n = new TNode(10);
         n.left = new TNode(20);
         n.left.left = new TNode(40);
         n.left.right = new TNode(60);
