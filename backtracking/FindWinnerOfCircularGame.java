@@ -1,6 +1,5 @@
 package backtracking;
 
-import java.util.ArrayList;
 
 //https://leetcode.com/problems/find-the-winner-of-the-circular-game/
 public class FindWinnerOfCircularGame {
