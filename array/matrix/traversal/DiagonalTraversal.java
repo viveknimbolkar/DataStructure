@@ -5,7 +5,7 @@ public class DiagonalTraversal {
     // traverse diagonal element
     void diagonalTraverse(int[][] grid){
         for (int i = 0; i < grid.length; i++)
-            for (int j = 0, k = i; j < grid.length; i++, j++)
+            for (int j = 0; j < grid.length; i++, j++)
                 System.out.println(grid[j][i]);
     }
 
