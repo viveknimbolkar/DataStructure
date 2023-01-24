@@ -1,4 +1,4 @@
-package revision;
+package revision.array.searching;
 
 public class JumpSearch {
     public static void main(String[] args) {
