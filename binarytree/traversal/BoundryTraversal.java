@@ -57,6 +57,38 @@ public class BoundryTraversal {
         return (node.left != null && node.right != null);
     }
 
+    private void addRightBoundryNodes1(TNode root, ArrayList<Integer> nodes) {
+        if (root == null) return;
+
+        if (root.right != null){
+            addRightBoundryNodes(root.right, nodes);
+            nodes.add(root.data);
+        }else if (root.left != null){
+            addRightBoundryNodes(root.left, nodes);
+            nodes.add(root.data);
+        }
+    }
+
+    private void addLeaves1(TNode root, ArrayList<Integer> nodes) {
+        if (root == null)return;
+        addLeaves(root.left,nodes);
+        if (root.left == null && root.right == null){
+            nodes.add(root.data);
+        }
+        addLeaves(root.right,nodes);
+    }
+
+    private void addLeftBoundryNodes1(TNode root, ArrayList<Integer> nodes) {
+        if (root == null) return;
+
+        if (root.left != null){
+            nodes.add(root.data);
+            addLeftBoundryNodes(root.left,nodes);
+        }else if (root.right != null){
+            nodes.add(root.data);
+            addLeftBoundryNodes(root.right,nodes);
+        }
+    }
 
     public static void main(String[] args) {
         BoundryTraversal boundry = new BoundryTraversal();
