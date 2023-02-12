@@ -1,9 +1,8 @@
-import predefined.TNode;
+package array.problems;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
-class MyClass{
+class SeperateNumbers{
 
     public static void main(String[] args) {
         int[] data =  {13,25,83,77};
@@ -22,14 +21,14 @@ class MyClass{
             if (nums[i]<10){
                 ans.add(nums[i]);
             }else{
-               int[] digits = getDigits(nums[i]);
+                int[] digits = getDigits(nums[i]);
                 for (int x: digits) {
                     ans.add(x);
                 }
             }
         }
 
-       int[] finalans = new int[ans.size()];
+        int[] finalans = new int[ans.size()];
         for (int i = 0; i < ans.size(); i++) {
             finalans[i] = ans.get(i);
         }

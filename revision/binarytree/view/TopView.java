@@ -1,19 +1,12 @@
 package revision.binarytree.view;
 
 import predefined.TNode;
-
+import revision.binarytree.view.Pair;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Queue;
 
-class Pair{
-    int level;
-    TNode node;
-    Pair(TNode node,int level){
-        this.level = level;
-        this.node = node;
-    }
-}
+
 public class TopView {
 
    static void topView(TNode root){
@@ -27,12 +20,14 @@ public class TopView {
            TNode node = curr.node;
            map.put(node.data,level);
            if (node.left != null) q.add(new Pair(node.left,level-1));
-           if (node.right != null) q.add(new Pair(node.right,level-1));
+           if (node.right != null) q.add(new Pair(node.right,level+1));
        }
 
     }
 
     public static void main(String[] args) {
+
+
         TNode root = new TNode(1);
         root.left = new TNode(2);
         root.right = new TNode(3);

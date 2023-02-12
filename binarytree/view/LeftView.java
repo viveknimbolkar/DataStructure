@@ -4,7 +4,7 @@ import predefined.TNode;
 
 import java.util.ArrayList;
 
-//https://www.youtube.com/watch?v=KV4mRzTjlAk&list=PLgUwDviBIf0q8Hkd7bK2Bpryj2xVJk8Vk&index=25
+//https://www.youtube.com/watch?v=KV4mRzTjlAk&list =PLgUwDviBIf0q8Hkd7bK2Bpryj2xVJk8Vk&index=25
 public class LeftView {
     TNode root;
 
