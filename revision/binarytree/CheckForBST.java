@@ -19,5 +19,4 @@ public class CheckForBST {
        if (root.data <= minval || root.data >= maxval) return false;
         return isBST(root.left,minval,root.data) && isBST(root.right, root.data,maxval);
     }
-
 }
