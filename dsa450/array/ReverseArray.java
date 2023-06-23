@@ -1,4 +1,4 @@
-package dsa450;
+package dsa450.array;
 
 public class ReverseArray {
 
