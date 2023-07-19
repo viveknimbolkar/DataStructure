@@ -1,43 +1,23 @@
 package array.problems;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Set;
+import java.util.*;
 
 // https://practice.geeksforgeeks.org/problems/union-of-two-sorted-arrays/1
 public class UnionOfTwoSortedArray {
 
-//    ArrayList<Integer> findUnion(int[] a, int[] b, int n, int m){
-//        ArrayList<Integer> arrList = new ArrayList<>();
-//
-//        int i = 0, j = 0;
-//        //check for small element from both array and add it into arraylist
-//        while(i < n && j < m){
-//            if(a[i] < b[j]){
-//                arrList.add(a[i]);
-//                i++;
-//            }else if(b[j] < a[i]){
-//                arrList.add(b[j]);
-//                j++;
-//            }else{
-//                arrList.add(b[j]);
-//                i++;
-//                j++;
-//            }
-//        }
-//
-//        while (i < n){
-//            arrList.add(a[i]);
-//            i++;
-//        }
-//
-//        while (j < m){
-//            arrList.add(b[j]);
-//            j++;
-//        }
-//        return arrList;
-//    }
+    int findUnion2(int[] a, int[] b, int n, int m){
+        HashSet<Integer> set = new LinkedHashSet<>();
+
+        for (int i = 0; i < n; i++)
+            set.add(a[i]);
+
+
+        for (int i = 0; i < m; i++)
+            set.add(b[i]);
+
+
+        return set.size();
+    }
 
     //use set
     ArrayList<Integer> findUnion(int[] a, int[] b, int n, int m){
@@ -70,5 +50,6 @@ public class UnionOfTwoSortedArray {
         int[] b = {1,2,3};
         ArrayList<Integer> result = setOperation.findUnion(a,b,a.length,b.length);
         System.out.println(result);
+        System.out.println(setOperation.findUnion2(a,b,a.length,b.length));
     }
 }
