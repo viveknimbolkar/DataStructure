@@ -1,4 +1,4 @@
-package dcscracker;
+package array.problems;
 // https://www.geeksforgeeks.org/largest-sum-contiguous-subarray/
 public class KadaneAlgo {
 
@@ -10,7 +10,7 @@ public class KadaneAlgo {
         //traverse and keep track of previous element
         for (int i = 0; i < size; i++) {
             max = max + arr[i];
-            if (max > totalMax)
+            if (totalMax < max)
                 totalMax= max;
             if(max < 0)
                 max = 0;
@@ -21,7 +21,7 @@ public class KadaneAlgo {
     public static void main(String[] args) {
         KadaneAlgo kalgo = new KadaneAlgo();
         int[] data = {-4,-6,4,-3,6,-5,3,2};
-        int[] arr = {1,2,3,-2,5};
+        int[] arr =  { -2, -3, 4, -1, -2, 1, 5, -3 };
         int sum = kalgo.findMaxSumArray(arr);
         System.out.println(sum);
     }
