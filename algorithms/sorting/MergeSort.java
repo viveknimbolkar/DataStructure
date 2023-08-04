@@ -4,7 +4,7 @@ import predefined.PredefinedMethods;
 
 class MergeSort
 {
-    void merge(int[] arr, int l,     int m, int r) {
+    void merge(int[] arr, int l,int m, int r) {
         int n1 = m - l + 1;
         int n2 = r - m;
 
