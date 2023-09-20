@@ -8,6 +8,7 @@ public class CountPairsWithGivenSum {
             for (int j = i; j < arr.length-1; j++) {
                 if (arr[i]+arr[j+1]==sum) count++;
             }
+
         }
         return count;
     }
