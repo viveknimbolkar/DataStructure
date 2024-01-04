@@ -76,9 +76,116 @@ public class Patterns {
         }
     }
 
+    void printInvertedPattern(int n){
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < i; j++) {
+                System.out.print(" ");
+            }
+
+            for (int j = 0; j < 2*n-(2*i+1); j++) {
+                System.out.print("*");
+            }
+
+            for (int j = 0; j < i; j++) {
+                System.out.print(" ");
+            }
+            System.out.println();
+        }
+    }
+
+    void printDiamondPattern(int n){
+        // print pyramid
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n-i-1; j++) {
+                System.out.print(" ");
+            }
+            for (int j = 0; j < 2*i+1 ; j++) {
+                System.out.print("*");
+            }
+            for (int j = 0; j < n-i-1; j++) {
+                System.out.print(" ");
+            }
+            System.out.println();
+        }
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < i; j++) {
+                System.out.print(" ");
+            }
+            for (int j = 0; j < 2*n-2*i-1 ; j++) {
+                System.out.print("*");
+            }
+            for (int j = 0; j < i; j++) {
+                System.out.print(" ");
+            }
+            System.out.println();
+        }
+
+    }
+
+    void printHalfDiamondStarPattern(int n){
+        // print right angle triangle
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j <= i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+        // print inverted right angle triangle
+        for (int i = 0; i < n; i++) {
+            for (int j = n-1; j > i ; j--) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
+    void printBinaryNumberTrianglePattern(int n,int approach){
+        switch(approach){
+            case 1:
+                // approach 1: brute force
+                for (int i = 0; i < n; i++) {
+                    for (int j = 0; j < i; j++) {
+                        if(i%2 == 0){
+                            if(j%2 == 0)
+                                System.out.print(0);
+                            else
+                                System.out.print(1);
+                        }else{
+
+                            if(j%2 == 0)
+                                System.out.print(1);
+                            else
+                                System.out.print(0);
+                        }
+                    }
+                    System.out.println();
+                }
+                break;
+
+            case 2:
+                // approach 2: using flag and store the value in (start) var
+                int start = 1; // initial value is always 1
+                for (int i = 0; i < n; i++) {
+                    if(i % 2 == 0) start = 0;
+                    else start = 1;
+
+                    for (int j = 0; j < i; j++) {
+                        System.out.print(start);
+                        start = 1 - start;
+                    }
+                    System.out.println();
+                }
+                break;
+        }
+
+
+
+    }
+
     public static void main(String[] args) {
         Patterns patterns = new Patterns();
         int rows = 5;
-        patterns.printPyramid(rows);
+        patterns.printBinaryNumberTrianglePattern(rows,2);
     }
 }

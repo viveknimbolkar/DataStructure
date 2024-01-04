@@ -17,7 +17,7 @@ public class BubbleSort {
             for (int j = 0; j < array.length-i-1; j++) {
                 //sorting in ascending order
                 if (array[j] > array[j+1]){ // use < to sort in descending order
-                    //swapping adjancent element
+                    //swapping adjancent element≠
                     int temp = array[j+1];
                     array[j+1] = array[j];
                     array[j] = temp;
