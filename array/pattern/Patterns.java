@@ -51,9 +51,34 @@ public class Patterns {
         }
     }
 
+    void printPyramid(int n){
+        // space = n-i-1
+        // star = 2*i-1
+
+        // itereate over row
+        for (int i = 0; i < n; i++) {
+            // print space
+            for (int j = 0; j < n-i-1; j++) {
+                System.out.print(" ");
+            }
+
+            // print star
+            for (int k = 0; k < 2*i+1; k++) {
+                System.out.print("*");
+            }
+
+            // print space
+            for (int l = 0; l < n-i-1; l++) {
+                System.out.print(" ");
+
+            }
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args) {
         Patterns patterns = new Patterns();
         int rows = 5;
-        patterns.printReverseDownwardTriangle(rows);
+        patterns.printPyramid(rows);
     }
 }
