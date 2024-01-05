@@ -178,14 +178,52 @@ public class Patterns {
                 }
                 break;
         }
+    }
 
+    void increaseNumberPattern(int n)
+    {
+        int counter = 1;
+        for (int i = 0; i <= n; i++) {
+            for (int j = 0; j < i; j++) {
+                System.out.print(counter++);
+            }
+            System.out.println();
+        }
+    }
 
+    void printNumberCrownPattern(int n){
+        int spaces = 2*n-1; // total spaces to add in each row
+        for (int i = 1; i <= n; i++) {
+            // print num in increasing order
+            for (int j = 1; j <= i; j++) {
+                System.out.print(j);
+            }
 
+            // print spaces
+            for (int j = 1; j <= spaces; j++) {
+                System.out.print(" ");
+            }
+
+            for (int j = i; j >= 1; j--) {
+                System.out.print(j);
+            }
+            System.out.println();
+            spaces -= 2;
+        }
+    }
+
+    void printIncreasingLetterTrianglePattern(int n){
+        for (int i = 0; i < n; i++) {
+            for (char j = 'A'; j <= 'A'+i; j++) {
+                System.out.print(j+" ");
+            }
+            System.out.println();
+        }
     }
 
     public static void main(String[] args) {
         Patterns patterns = new Patterns();
         int rows = 5;
-        patterns.printBinaryNumberTrianglePattern(rows,2);
+        patterns.printIncreasingLetterTrianglePattern(rows);
     }
 }
