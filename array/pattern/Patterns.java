@@ -221,9 +221,62 @@ public class Patterns {
         }
     }
 
+    void printReverseLetterTrianglePattern(int n){
+        for (int i =0; i < n ; i++) {
+            for (char j ='A'; j <= 'A'+(n-i-1); j++) {
+                System.out.print(j+" ");
+            }
+            System.out.println();
+        }
+    }
+
+    void printAlphaRampPattern(int n)
+    {
+        for (int i = 1; i <= n; i++) {
+            for (int j = 0; j < i; j++) {
+                System.out.print((char)(int)('A'+i-1)+" ");
+            }
+            System.out.println();
+        }
+    }
+
+    void printAlphaHillPattern(int n){
+        for (int i = 0; i < n; i++) {
+            // spaces
+            for (int j = 0; j < n-i-1; j++) {
+                System.out.print(" ");
+            }
+
+            // alphabets
+            char ch = 'A';
+            int breakpoint = (2*i+1)/2; // to start reverse pattern
+            for (int j = 1; j <= 2*i+1; j++) {
+                System.out.print(ch+" ");
+                if(j <= breakpoint) ch++;
+                else ch--;
+            }
+
+            // spaces
+            for (int j = 0; j < n-i-1; j++) {
+                System.out.print(" ");
+            }
+
+            System.out.println();
+        }
+    }
+
+    void printAlphaTrianglePattern(int n){
+        for (int i = 0; i < n ; i++) {
+            for (char j = (char)(int)('A'+n-1-i); j <= (char)(int)('A'+n-1); j++) {
+                System.out.print(j+" ");
+            }
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args) {
         Patterns patterns = new Patterns();
         int rows = 5;
-        patterns.printIncreasingLetterTrianglePattern(rows);
+        patterns.printAlphaTrianglePattern(rows);
     }
 }
