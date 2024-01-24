@@ -26,12 +26,24 @@ public class BubbleSort {
         }
     }
 
+    public void recursiveBubbleSort(int[] arr, int n){
+        if(n == 1) return;
+        for (int i = 0; i <= n - 2 ; i++) {
+            if(arr[i] > arr[i+1]){
+                int temp = arr[i];
+                arr[i] = arr[i+1];
+                arr[i+1] = temp;
+            }
+        }
+        recursiveBubbleSort(arr,n-1);
+    }
+
     public static void main(String[] args) {
         PredefinedMethods methods = new PredefinedMethods();
         BubbleSort bs = new BubbleSort();
         int[] my_array = {45,2,468,7,94,2,46,78,0,62,1,1,5,79,4,14,23};
         methods.printArray(my_array);
-        bs.bubbleSort(my_array);
+        bs.recursiveBubbleSort(my_array, my_array.length);
         methods.printArray(my_array);
     }
 }

@@ -17,6 +17,6 @@ public class FibonacciSeries {
     public static void main(String[] args) {
         FibonacciSeries series = new FibonacciSeries();
         int n = 5;
-        series.fib(0,1,n);
+        System.out.println(series.fib(n));
     }
 }

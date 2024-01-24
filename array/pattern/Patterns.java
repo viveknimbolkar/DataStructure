@@ -274,9 +274,78 @@ public class Patterns {
         }
     }
 
+    void printSymmentricVoidPattern(int n){
+
+            // first print half reverse pattern
+            int initialSpaces = 0;
+        for (int i = 0; i < n; i++) {
+            // start
+            for (int j = 0; j < n-i; j++) {
+                System.out.print("*");
+            }
+            // spaces
+            for (int j = 0; j < initialSpaces; j++) {
+                System.out.print(" ");
+            }
+            // star
+            for (int j = 0; j < n-i; j++) {
+                System.out.print("*");
+            }
+            initialSpaces += 2;
+            System.out.println();
+        }
+
+        // print pattern
+        int initialSpaces2 = 2*n-2;
+        for (int i = 0; i < n; i++) {
+            // star
+            for (int j = 0; j <= i; j++) {
+                System.out.print("*");
+            }
+
+            // space
+            for (int j = 0; j < initialSpaces2; j++) {
+                System.out.print(" ");
+            }
+
+            // star
+            for (int j = 0; j <= i; j++) {
+                System.out.print("*");
+            }
+            initialSpaces2 -= 2;
+            System.out.println();
+        }
+    }
+
+    void printSymmetricButterflyPattern(int n){
+       int spaces = 2*n-2;
+        for (int i =1; i <= 2*n-1; i++) {
+            int stars = i; // for first half
+            if(i > n) stars = 2*n-i; // for second half
+
+            // star
+            for (int j = 1; j <= stars ; j++) {
+                System.out.print("*");
+            }
+
+            // spaces
+            for (int j = 1; j <= spaces; j++) {
+                System.out.print(" ");
+            }
+
+            // star
+            for (int j = 1; j <= stars ; j++) {
+                System.out.print("*");
+            }
+            if (i < n) spaces -= 2;
+            else spaces += 2;
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args) {
         Patterns patterns = new Patterns();
         int rows = 5;
-        patterns.printAlphaTrianglePattern(rows);
+        patterns.printSymmetricButterflyPattern(rows);
     }
 }
