@@ -1,6 +1,7 @@
 package problems;
 // https://leetcode.com/problems/sort-colors/
 //https://www.youtube.com/watch?v=oaVa-9wmpns&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=5
+//https://www.codingninjas.com/studio/problems/631055?topList=striver-sde-sheet-problems&utm_source=striver&utm_medium=website&leftPanelTabValue=PROBLEM
 public class SortZeroOneTwo {
 
     void sortColors(int[] nums){

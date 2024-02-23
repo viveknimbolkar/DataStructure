@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 //https://leetcode.com/problems/single-number-ii/
-public class SingleNumber2 {
+public class  SingleNumber2 {
 
     int singleNumber(int[] nums) {
         HashMap<Integer,Integer> map = new HashMap<>();
