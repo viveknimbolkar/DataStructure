@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class SubarrayWithGivenSum {
-
     // Brute force: Using 2 pointer approach
     int longestSubarrayWithSumK(int[] a, int n, int k){
         int len = 0;

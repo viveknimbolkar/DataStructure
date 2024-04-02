@@ -51,16 +51,31 @@ public class RotateBy90Degree {
         }
 
     }
+
+    // method 3 using dummy matrix
+    // T=O(n^2) Space=O(n^2)
+    int[][] usingDummyMatrix(int[][] mat){
+        int n = mat.length;
+        int[][] rotated = new int[n][n];
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                rotated[j][n-i-1] = mat[i][j];
+            }
+        }
+        return rotated;
+    }
+
     public static void main(String[] args) {
         RotateBy90Degree rotateMatrix = new RotateBy90Degree();
         int matrix[][] = {{1, 2, 3},
             {4, 5, 6},
             {7, 8, 9}};
 
-        rotateMatrix.rotate(matrix);
+        int ans[][] = rotateMatrix.usingDummyMatrix(matrix);
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[0].length; j++) {
-                System.out.print(matrix[i][j]+" ");
+                System.out.print(ans[i][j]+" ");
             }
             System.out.println();
         }

@@ -1,6 +1,7 @@
 package array.problems;
 
 import java.util.Arrays;
+import java.util.HashSet;
 
 public class LongestSuccessiveElements {
 
@@ -49,9 +50,33 @@ public class LongestSuccessiveElements {
         }
         return  longest;
     }
+
+    // optimal: using set
+    int findLengthUsingSet(int[] arr){
+        int longest = 1, n = arr.length;
+        HashSet<Integer> set = new HashSet<>();
+
+        for (int e : arr){
+            set.add(e);
+        }
+
+        for (int i = 0; i < n; i++) {
+            int counter = 1;
+            int x = arr[i];
+            if(!set.contains(x-1)){
+                while (set.contains(x+1)){
+                    x = x + 1;
+                    counter = counter + 1;
+                }
+            }
+            longest = Math.max(longest,counter);
+        }
+
+        return longest;
+    }
     public static void main(String[] args) {
         LongestSuccessiveElements longestElement = new LongestSuccessiveElements();
         int[] arr = {5,8,3,2,1,4};
-        System.out.println(longestElement.findLength(arr));
+        System.out.println(longestElement.findLengthUsingSet(arr));
     }
 }
