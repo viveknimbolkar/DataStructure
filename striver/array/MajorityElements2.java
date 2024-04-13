@@ -1,4 +1,5 @@
-package array.problems;
+package striver.array;
+//https://leetcode.com/problems/majority-element-ii/
 
 import java.util.HashMap;
 import java.util.Map;

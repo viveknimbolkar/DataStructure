@@ -1,5 +1,4 @@
-package array.problems;
-//https://leetcode.com/problems/majority-element-ii/submissions/
+package striver.array;
 import java.util.List;
 import java.util.HashMap;
 import java.util.ArrayList;
@@ -11,7 +10,6 @@ public class MajorityElements {
         List<Integer> list = new ArrayList<>();
         HashMap<Integer,Integer> map = new HashMap<>();
         int n = nums.length/3;
-        System.out.println("n: "+n);
 
         for (int i = 0; i < nums.length; i++) {
             if (map.containsKey(nums[i])){

@@ -1,25 +1,29 @@
-package array.problems;
+package striver.array;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
+import java.util.*;
 
 //https://leetcode.com/problems/3sum/
 public class ThreeSum {
 
+    // Optimal approach
+    // complexity: Time = O(NlogN)+O(N^2) Space = O(1)
     List<List<Integer>> threeSum2(int[] nums) {
-        List<List<Integer>> ans = new ArrayList<>();
         HashSet<List<Integer>> set = new HashSet<>();
 
         Arrays.sort(nums);
+
         for (int i = 0; i < nums.length; i++) {
             int left = i+1, right = nums.length-1;
 
+            // skip duplicates
+            if(i != 0 && nums[i] == nums[i-1]) continue;
+
+            // moving 2 pointers left ---> <--- right
             while (left < right){
-                if (nums[i]+nums[left]+nums[right] < 0){
+                int sum = nums[i]+nums[left]+nums[right];
+                if (sum < 0){
                     left++;
-                }else if (nums[i]+nums[left]+nums[right] > 0){
+                }else if (sum > 0){
                     right--;
                 }else {
                     List<Integer> tmpList = new ArrayList<>();
@@ -27,16 +31,45 @@ public class ThreeSum {
                     tmpList.add(nums[left]);
                     tmpList.add(nums[right]);
                     set.add(tmpList);
+                    // reduce search space
                     left++;
                     right--;
+
+                    // skip duplicates
+                    while(left < right && nums[left] == nums[left-1]) left++;
+                    while(left < right && nums[right] == nums[right-1]) right--;
                 }
             }
         }
-
         return new ArrayList<>(set);
     }
 
+    // Using hashset : removing a[k] loop
+    // Complexity: T = O() S = O()
+    List<List<Integer>> findSum(int[] nums){
+        int n = nums.length;
+        Set<List<Integer>> triplets = new HashSet<>(); // store unique triplets only
+
+        for (int i = 0; i < n-1; i++) {
+            Set<Integer> set = new HashSet<>(); // store the elements in between i ---- j
+            for (int j = i+1; j < n-1; j++) {
+                int third = -(nums[i]+nums[j]); // calculate third element a[k]
+
+                // if found set means we can create triplet
+                if(set.contains(third)){
+                    List<Integer> tempTriplets = Arrays.asList(nums[i],nums[j],third);
+                    tempTriplets.sort(null);
+                    triplets.add(tempTriplets);
+                }
+                set.add(nums[j]);
+            }
+        }
+        List<List<Integer>> ans = new ArrayList<>(triplets);
+        return ans;
+    }
+
     // Brute Force
+    // Complexity: T=O(n^3) S=(2 * no. of unique triplets)
     List<List<Integer>> threeSum(int[] nums) {
         List<List<Integer>> ans = new ArrayList<>();
 
