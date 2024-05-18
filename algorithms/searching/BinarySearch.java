@@ -1,5 +1,6 @@
 package algorithms.searching;
 // O(logn)
+//https://leetcode.com/problems/binary-search/description/
 public class BinarySearch {
 
     //Method 1: Recursive method
