@@ -12,10 +12,17 @@ public class SearchInRotatedSortedArray {
 
             if(arr[mid] == target) return mid;
 
+            // case when array contains duplicates
+            if (arr[left] == arr[mid] && arr[mid] == arr[right]){
+                left = left + 1;
+                right = right - 1;
+                continue;
+            }
+
             // identify left sorted half
             if(arr[left] <= arr[mid]){
                     // search in left
-                if(arr[left] <= target && target <= arr[right]){
+                if(arr[left] <= target && target <= arr[mid]){
                     right = mid - 1;
                 }else{
                     left = mid + 1;
@@ -35,7 +42,7 @@ public class SearchInRotatedSortedArray {
 
     public static void main(String[] args) {
         SearchInRotatedSortedArray searchInRotatedSortedArray = new SearchInRotatedSortedArray();
-        int[] nums = {4,5,6,7,0,1,2};
+        int[] nums = {2,5,6,0,0,1,2};
         int target = 0;
         System.out.println(searchInRotatedSortedArray.search(nums,target));
     }
